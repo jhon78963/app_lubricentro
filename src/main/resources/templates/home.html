@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<head th:replace="~{layout/layout :: head}">
+	<meta charset="ISO-8859-1">
+</head>
+
+<body>
+
+	<div class="widget-one" layout:fragment="page-content">
+
+		<h6 th:text="${titulo}"></h6>
+
+	</div>
+
+</body>
+
+</html>
