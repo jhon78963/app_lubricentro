@@ -12,10 +12,4 @@ public class HomeController {
 		model.addAttribute("titulo", "Bienvenid@, pagina de inicio");
 		return "home";
 	}
-	
-	@GetMapping("/hola")
-	public String hola(Model model) {
-		model.addAttribute("titulo", "Bienvenid@, pagina de inicio");
-		return "hola";
-	}
 }
