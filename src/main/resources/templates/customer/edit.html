@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+<head th:replace="~{layout/layout :: head}">
+<meta charset="ISO-8859-1">
+<title>Editar Cliente</title>
+</head>
+<body>
+	<div class="widget-one" layout:fragment="page-content">
+
+		<h6 th:text="${titulo}"></h6>
+
+		<a class="btn btn-outline-primary mb-2" th:href="@{/customer}">Regresar</a>
+
+		<form th:action="@{/customer/save}" th:object="${customer}"
+			method="post">
+			<input type="hidden" name="code" th:field="*{code}" />
+			<div class="form-group">
+				<label for="exampleFormControlInput1">DNI</label> <input type="text"
+					class="form-control" th:field="*{dni}"
+					th:errorclass="'form-control alert-danger'" /><small
+					class="form-text text-danger" th:if="${#fields.hasErrors('dni')}"
+					th:errors="*{dni}"></small>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleFormControlInput1">Nombres</label> <input
+					type="text" class="form-control" th:field="*{nombre}"
+					th:errorclass="'form-control alert-danger'" /><small
+					class="form-text text-danger"
+					th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleFormControlInput1">Apellidos</label> <input
+					type="text" class="form-control" th:field="*{apellidos}"
+					th:errorclass="'form-control alert-danger'" /><small
+					class="form-text text-danger"
+					th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></small>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleFormControlInput1">Email</label> <input
+					type="email" class="form-control" th:field="*{email}"
+					th:errorclass="'form-control alert-danger'" /><small
+					class="form-text text-danger" th:if="${#fields.hasErrors('email')}"
+					th:errors="*{email}"></small>
+			</div>
+
+
+			<button type="submit" class="btn btn-primary">Save changes</button>
+		</form>
+
+
+
+	</div>
+</body>
+</html>
